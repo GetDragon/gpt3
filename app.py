@@ -22,7 +22,8 @@ def index():
 
 @app.route('/summary', methods=['POST'])
 def summary():
-    openai.api_key = os.environ.get("API_KEY", "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")
+    openai.api_key = os.environ.get("API_KEY", "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")
+    openai.organization = "Legis S.A."
     # divide el documento en partes para enviarlos a resumir
     th = TokenizerHelper()
     message = request.data
