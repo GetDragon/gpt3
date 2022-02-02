@@ -2,6 +2,7 @@ from lib2to3.pgen2 import token
 import logging
 
 import openai
+import os
 
 from tokenizer import TokenizerHelper
 
@@ -21,7 +22,7 @@ def index():
 
 @app.route('/summary', methods=['POST'])
 def summary():
-    openai.api_key = "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"
+    openai.api_key = os.environ.get("API_KEY", "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")
     # divide el documento en partes para enviarlos a resumir
     th = TokenizerHelper()
     message = request.data
