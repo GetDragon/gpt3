@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'legissummary'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_411735964E844C4D8FAB100572EEEE40 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2CD94390CC4841B28EF6EDA34A0CE88D }}
