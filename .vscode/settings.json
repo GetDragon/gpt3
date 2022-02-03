@@ -1,5 +1,0 @@
-{
-    "python.pythonPath": "d:\\GetDragon\\Python\\gpt3\\.venv\\Scripts\\python.exe",
-    "appService.defaultWebAppToDeploy": "/subscriptions/b7b78076-cc71-414e-b707-9402bef52e93/resourceGroups/PyGroup/providers/Microsoft.Web/sites/legissummary",
-    "appService.deploySubpath": "."
-}
