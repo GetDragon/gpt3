@@ -18,7 +18,7 @@ class OpenAIHelper:
         countTokens = 0
         texto = ""
         summary = ""
-        openai.api_key = "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" #os.environ.get("API_KEY")
+        openai.api_key = os.environ.get("API_KEY")
         try:
             for line in lines:
                 if len(line) == 0: continue
