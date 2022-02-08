@@ -148,6 +148,7 @@
     <script>
         function EnviarTexto() {
             let resultado = document.getElementById("Resultado");
+            let resultado2 = document.getElementById("Resultado2");
             let data = document.getElementById("message").value;
 
             if (data.length > 0) {
@@ -163,6 +164,18 @@
 
                 xhr.open('POST', "/summary", true);
                 xhr.send(data);
+
+                var xhr2 = new XMLHttpRequest();
+                xhr2.onreadystatechange = function () {
+                    if (this.readyState != 4) return;
+
+                    if (this.status == 200) {
+                        resultado2.innerText = this.responseText;
+                    }
+                };
+
+                xhr2.open('POST', "/summary2", true);
+                xhr2.send(data);
             }
         }
 
@@ -182,7 +195,7 @@
         <form>
             <div>
                 <label for="message">
-                    <span class="required">Message: *</span>
+                    <span class="required">Texto Original: *</span>
                     <textarea id="message" name="message" placeholder="Texto a resumir." tabindex="5" required="required"></textarea>
                 </label>
             </div>
@@ -192,7 +205,13 @@
             </div>
         </form>
         <hr />
+        <h4>Resumen OpenAI:</h4>
         <div id="Resultado" style="height: 230px; overflow-y: scroll;">
+            Respuesta
+        </div>
+        <hr />
+        <h4>Resumen Spacy:</h4>
+        <div id="Resultado2" style="height: 230px; overflow-y: scroll;">
             Respuesta
         </div>
     </div>
